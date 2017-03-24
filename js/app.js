@@ -22,7 +22,7 @@ app.controller('AppCtrl', function($scope) {
 });
 
 app.controller('ProductsCtrl', function($scope, $http, $state) {
-    $http.get('../json/data.json').then(function(res) {
+    $http.get('./json/data.json').then(function(res) {
         $scope.products = res.data;
     });
 
@@ -37,7 +37,7 @@ app.controller('ProductsCtrl', function($scope, $http, $state) {
 });
 
 app.controller('ViewCtrl', function($scope, $http, $stateParams) {
-    $http.get('../json/data.json').then(function(res) {
+    $http.get('./json/data.json').then(function(res) {
         $scope.products = res.data;
         angular.forEach($scope.products, function(data) {
             if($stateParams.id == data.id) {
